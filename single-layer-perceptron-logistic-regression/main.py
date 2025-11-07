@@ -1,7 +1,7 @@
 """
     Loading and preprocessing
 """
-
+from sklearn.preprocessing import StandardScaler
 from ucimlrepo import fetch_ucirepo
 import pandas as pd
 
@@ -79,6 +79,9 @@ class LogisticRegressionModel:
 
         for epoch in range(epochs):
             # shuffle
+            shuffled_indices = np.random.permutation(N)  # (N,)
+            X = X[shuffled_indices]
+            y = y[shuffled_indices]
 
             # mini-batches
             for start in range(0, N, batch_size):
@@ -165,15 +168,24 @@ def evaluate_binary(y_true, y_probs, threshold=0.5):
 X_np = X_processed.to_numpy(dtype=np.float32)
 y_np = y_aligned.to_numpy(dtype=np.int32)
 
-RANDOM_STATE = 42
+#RANDOM_STATE = np.random.randint(100)
+#RANDOM_STATE = 14
+#RANDOM_STATE = 75
+#RANDOM_STATE = 6
+RANDOM_STATE=42
 
 X_train, X_test, y_train, y_test = train_test_split(
     X_np, y_np, test_size=0.2, random_state=RANDOM_STATE, stratify=y_np
 )
 
+scaler = StandardScaler()
+scaler.fit(X_train)  # learn mean and stddev from train dataset
 
-classifier = LogisticRegressionModel(seed=RANDOM_STATE, learning_rate=0.0001)
-classifier.fit(X_train, y_train, epochs=1000, batch_size=32)
+X_train = scaler.transform(X_train)
+X_test = scaler.transform(X_test)
+
+classifier = LogisticRegressionModel(seed=None, learning_rate=0.1)
+classifier.fit(X_train, y_train, epochs=150, batch_size=32)
 
 # After training:
 y_test_probs = classifier.predict(X_test)
@@ -184,3 +196,5 @@ print(f"Accuracy:  {eval_res['accuracy']:.4f}")
 print(f"Precision: {eval_res['precision']:.4f}")
 print(f"Recall:    {eval_res['recall']:.4f}")
 print(f"F1:        {eval_res['f1']:.4f}\n")
+
+print(f"\nRandom state: {RANDOM_STATE}")

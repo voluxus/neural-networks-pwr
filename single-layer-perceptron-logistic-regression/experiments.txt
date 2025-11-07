@@ -1,0 +1,561 @@
+// hiperparametry stałe dla eksperymentów learning_rate=0.0001, epochs=1000, batch_size=32
+
+NO SHUFFLE, "good" weight seed, 20% testing
+
+Epoch 995/1000 — loss: 0.674320
+Epoch 996/1000 — loss: 0.674253
+Epoch 997/1000 — loss: 0.674187
+Epoch 998/1000 — loss: 0.674120
+Epoch 999/1000 — loss: 0.674054
+Epoch 1000/1000 — loss: 0.673988
+
+Test set metrics:
+Accuracy:  0.8000
+Precision: 0.7857
+Recall:    0.7857
+F1:        0.7857
+
+----------------------------------------------
+
+PER EPOCH SHUFFLING, "good" weight seed, 20% testing
+
+Epoch 995/1000 — loss: 0.921145
+Epoch 996/1000 — loss: 0.641783
+Epoch 997/1000 — loss: 0.794613
+Epoch 998/1000 — loss: 0.643346
+Epoch 999/1000 — loss: 0.860926
+Epoch 1000/1000 — loss: 0.686645
+
+Test set metrics:
+Accuracy:  0.7833
+Precision: 0.7419
+Recall:    0.8214
+F1:        0.7797
+
+----------------------------------------------
+
+NO SHUFFLE, RANDOM weight seed, 20% testing
+
+n1: ----
+Epoch 995/1000 — loss: 0.605302
+Epoch 996/1000 — loss: 0.605290
+Epoch 997/1000 — loss: 0.605277
+Epoch 998/1000 — loss: 0.605264
+Epoch 999/1000 — loss: 0.605252
+Epoch 1000/1000 — loss: 0.605239
+
+Test set metrics:
+Accuracy:  0.7667
+Precision: 0.7059
+Recall:    0.8571
+F1:        0.7742
+
+n2: ----
+Epoch 995/1000 — loss: 1.687050
+Epoch 996/1000 — loss: 1.686823
+Epoch 997/1000 — loss: 1.686596
+Epoch 998/1000 — loss: 1.686370
+Epoch 999/1000 — loss: 1.686144
+Epoch 1000/1000 — loss: 1.685918
+
+Test set metrics:
+Accuracy:  0.5667
+Precision: 0.5200
+Recall:    0.9286
+F1:        0.6667
+
+n3: ----
+Epoch 995/1000 — loss: 1.086536
+Epoch 996/1000 — loss: 1.086378
+Epoch 997/1000 — loss: 1.086220
+Epoch 998/1000 — loss: 1.086063
+Epoch 999/1000 — loss: 1.085905
+Epoch 1000/1000 — loss: 1.085747
+
+Test set metrics:
+Accuracy:  0.5500
+Precision: 0.5111
+Recall:    0.8214
+F1:        0.6301
+
+n4: ----
+Epoch 995/1000 — loss: 2.192512
+Epoch 996/1000 — loss: 2.192301
+Epoch 997/1000 — loss: 2.192089
+Epoch 998/1000 — loss: 2.191878
+Epoch 999/1000 — loss: 2.191666
+Epoch 1000/1000 — loss: 2.191455
+
+Test set metrics:
+Accuracy:  0.4667
+Precision: 0.4583
+Recall:    0.7857
+F1:        0.5789
+
+n5: ----
+Epoch 995/1000 — loss: 0.663571
+Epoch 996/1000 — loss: 0.663523
+Epoch 997/1000 — loss: 0.663474
+Epoch 998/1000 — loss: 0.663425
+Epoch 999/1000 — loss: 0.663377
+Epoch 1000/1000 — loss: 0.663328
+
+Test set metrics:
+Accuracy:  0.7500
+Precision: 0.7826
+Recall:    0.6429
+F1:        0.7059
+
+n6: ----
+Epoch 995/1000 — loss: 1.706627
+Epoch 996/1000 — loss: 1.706476
+Epoch 997/1000 — loss: 1.706326
+Epoch 998/1000 — loss: 1.706176
+Epoch 999/1000 — loss: 1.706026
+Epoch 1000/1000 — loss: 1.705876
+
+Test set metrics:
+Accuracy:  0.5333
+Precision: 0.5000
+Recall:    0.9643
+F1:        0.6585
+
+
+Wnioski: W wariancie bez zmiany kolejności wzorców po każdej epoce, większość (ok 2/3) na próbie N=6 eksperymentów wskazała kiepskie F1, z niskim Acc i wtedy wysokim Recall. Wyjątkowo udało się osiągnąć F1/Acc ok 70-75% proc, gdzie było dobre zbiegnięcie na uczącym i na testowym - wtedy raz Recall był najniższy ok 64%, raz i tak najwyższy z metryk - 82%. Zwykle jednak model radzi sobie miernie z F1 ok 60%, niższym Acc ok 50%, i wysokim >80% Recall.
+
+----------------------------------------------
+
+PER EPOCH SHUFFLING, RANDOM weight seed, 20% testing
+
+n1: ----
+Epoch 995/1000 — loss: 0.771886
+Epoch 996/1000 — loss: 0.744914
+Epoch 997/1000 — loss: 0.773166
+Epoch 998/1000 — loss: 0.875413
+Epoch 999/1000 — loss: 0.928078
+Epoch 1000/1000 — loss: 0.730049
+
+Test set metrics:
+Accuracy:  0.7833
+Precision: 0.7778
+Recall:    0.7500
+F1:        0.7636
+
+n2: ----
+Epoch 995/1000 — loss: 1.166191
+Epoch 996/1000 — loss: 1.174779
+Epoch 997/1000 — loss: 1.250621
+Epoch 998/1000 — loss: 1.223756
+Epoch 999/1000 — loss: 1.139871
+Epoch 1000/1000 — loss: 1.131312
+
+Test set metrics:
+Accuracy:  0.6500
+Precision: 0.6296
+Recall:    0.6071
+F1:        0.6182
+
+n3: ----
+Epoch 995/1000 — loss: 1.059841
+Epoch 996/1000 — loss: 0.781830
+Epoch 997/1000 — loss: 0.780978
+Epoch 998/1000 — loss: 0.784717
+Epoch 999/1000 — loss: 0.786964
+Epoch 1000/1000 — loss: 0.833248
+
+Test set metrics:
+Accuracy:  0.7000
+Precision: 0.7083
+Recall:    0.6071
+F1:        0.6538
+
+n4: ----
+Epoch 995/1000 — loss: 1.434665
+Epoch 996/1000 — loss: 1.108116
+Epoch 997/1000 — loss: 1.166643
+Epoch 998/1000 — loss: 1.149337
+Epoch 999/1000 — loss: 1.483624
+Epoch 1000/1000 — loss: 1.587522
+
+Test set metrics:
+Accuracy:  0.5667
+Precision: 0.6667
+Recall:    0.1429
+F1:        0.2353
+
+n5: ----
+Epoch 995/1000 — loss: 0.961355
+Epoch 996/1000 — loss: 0.968416
+Epoch 997/1000 — loss: 1.519686
+Epoch 998/1000 — loss: 1.131288
+Epoch 999/1000 — loss: 1.022845
+Epoch 1000/1000 — loss: 1.144985
+
+Test set metrics:
+Accuracy:  0.5500
+Precision: 0.5106
+Recall:    0.8571
+F1:        0.6400
+
+n6: ----
+Epoch 995/1000 — loss: 1.054792
+Epoch 996/1000 — loss: 1.090696
+Epoch 997/1000 — loss: 1.054736
+Epoch 998/1000 — loss: 1.201992
+Epoch 999/1000 — loss: 1.250242
+Epoch 1000/1000 — loss: 1.404471
+
+Test set metrics:
+Accuracy:  0.7000
+Precision: 0.6190
+Recall:    0.9286
+F1:        0.7429
+
+Wnioski: niestety, po wprowadzeniu losowania per-epoch, uczenie przebiega mniej stabilnie, f. straty po całym datasecie skacze, chociaż decyzje podejmowane są per-batch, więc może to zrozumiałe. Do tego i tak trafił się przypadek słabego Acc i wysokiego Recall (wsm powinienem potwierdzić ilością testów). Raz nawet Recall wyniosło 14% i zaniżyło F1 do 22%, mimo niezłego zbiegnięcia
+
+
+----------------------------------------------
+
+PER EPOCH SHUFFLING, RANDOM weight seed, 20% testing; BATCH_SIZE = cały dataset
+
+Wnioski: uczenie jest stabilne, loss monotonicznie malejący. Ale jakby wolniej się uczył.
+
+
+
+----------------------------------------------
+WPROWADZENIE SKALOWANIA CECH
+
+
+Standard scaled features, batch_size = FULL dataset
+
+a) learning rate 0.1
+
+Epoch 145/150 — loss: 0.370869
+Epoch 146/150 — loss: 0.370450
+Epoch 147/150 — loss: 0.370037
+Epoch 148/150 — loss: 0.369629
+Epoch 149/150 — loss: 0.369227
+Epoch 150/150 — loss: 0.368830
+
+Test set metrics:
+Accuracy:  0.8500
+Precision: 0.8800
+Recall:    0.7857
+F1:        0.8302
+
+b) still learning rate 0.1, 10x epochs
+
+Epoch 1495/1500 — loss: 0.338147
+Epoch 1496/1500 — loss: 0.338147
+Epoch 1497/1500 — loss: 0.338147
+Epoch 1498/1500 — loss: 0.338147
+Epoch 1499/1500 — loss: 0.338147
+Epoch 1500/1500 — loss: 0.338147
+
+Test set metrics:
+Accuracy:  0.8333
+Precision: 0.8462
+Recall:    0.7857
+F1:        0.8148
+
+c) learning rate 0.01, even 10x epochs - same results
+
+Epoch 14995/15000 — loss: 0.338147
+Epoch 14996/15000 — loss: 0.338147
+Epoch 14997/15000 — loss: 0.338147
+Epoch 14998/15000 — loss: 0.338147
+Epoch 14999/15000 — loss: 0.338147
+Epoch 15000/15000 — loss: 0.338147
+
+Test set metrics:
+Accuracy:  0.8333
+Precision: 0.8462
+Recall:    0.7857
+F1:        0.8148
+
+<wielokrotne uruchomienie podobnych eksperymentów>
+
+-> model dzięki przeskalowaniu cech do rozkładów standardowych skupionych wokół średniej 0, zyskał wysoką odporność na losowy wybór wag początkowych (które zawsze brałem jako mean 0, std 1). Eksperymenty uruchamiane z różnymi punktami startowymi zbiegają szybko w ok. 100 epok, dając bliskie wyniki w metrykach, różniące się o 1-5 pp.
+
+-> wychodzi na to że ten 1-warstwowy model przy tej funkcji aktywacji nie jest w stanie lepiej dopasować się do treningowego niż loss = 0.338147
+
+Btw mój rekord na tym zbiorze to Acc 0.85 przy F1 min. 0.82
+
+
+-----
+Z kolei przy SGD (batch_size = 1) ustanowiłem nowy rekord xD
+
+Epoch 145/150 — loss: 0.380497
+Epoch 146/150 — loss: 0.389311
+Epoch 147/150 — loss: 0.399002
+Epoch 148/150 — loss: 0.375771
+Epoch 149/150 — loss: 0.364908
+Epoch 150/150 — loss: 0.370348
+
+Test set metrics:
+Accuracy:  0.8667
+Precision: 0.8333
+Recall:    0.8929
+F1:        0.8621
+
+---
+A dla SGD przy 10x epok, wynik się poprawił:
+
+Epoch 1495/1500 — loss: 0.385774
+Epoch 1496/1500 — loss: 0.378414
+Epoch 1497/1500 — loss: 0.359416
+Epoch 1498/1500 — loss: 0.423261
+Epoch 1499/1500 — loss: 0.386072
+Epoch 1500/1500 — loss: 0.379460
+
+Test set metrics:
+Accuracy:  0.8833
+Precision: 0.8621
+Recall:    0.8929
+F1:        0.8772
+
+--
+albo znowu 150 epok
+
+Epoch 145/150 — loss: 0.409012
+Epoch 146/150 — loss: 0.405097
+Epoch 147/150 — loss: 0.423490
+Epoch 148/150 — loss: 0.401572
+Epoch 149/150 — loss: 0.417090
+Epoch 150/150 — loss: 0.394714
+
+Test set metrics:
+Accuracy:  0.8833
+Precision: 0.8387
+Recall:    0.9286
+F1:        0.8814
+
+
+--------
+Tu SGD, wagi pocz. stałe, losowany za to podział na zbiory
+
+Epoch 145/150 — loss: 0.342298
+Epoch 146/150 — loss: 0.355547
+Epoch 147/150 — loss: 0.344828
+Epoch 148/150 — loss: 0.340171
+Epoch 149/150 — loss: 0.335385
+Epoch 150/150 — loss: 0.361371
+
+Test set metrics:
+Accuracy:  0.9000
+Precision: 0.8929
+Recall:    0.8929
+F1:        0.8929
+
+
+------------------------------------
+TESTY dla SGD vs GD przy takich samych wygenerowanych wagach pocz., 20% test size, różne losowane podziały (seed) w kolejnych exp.
+-> pokazały mi one, że SGD osiągał zawsze lepsze metryki Acc i F1, czasem wręcz wszystkie lepsze. Minimalnie gorzej się przystosowywał do uczącego, skakał lekko, ale przez to nie dokonał się na nim overfitting. Ale to robione przy 20% test size
+
+SGD
+
+Epoch 145/150 — loss: 0.360724
+Epoch 146/150 — loss: 0.364576
+Epoch 147/150 — loss: 0.374082
+Epoch 148/150 — loss: 0.378237
+Epoch 149/150 — loss: 0.370815
+Epoch 150/150 — loss: 0.384062
+
+Test set metrics:
+Accuracy:  0.9000
+Precision: 0.9583
+Recall:    0.8214
+F1:        0.8846
+
+
+GD
+
+Epoch 145/150 — loss: 0.360922
+Epoch 146/150 — loss: 0.360505
+Epoch 147/150 — loss: 0.360094
+Epoch 148/150 — loss: 0.359688
+Epoch 149/150 — loss: 0.359289
+Epoch 150/150 — loss: 0.358895
+
+Test set metrics:
+Accuracy:  0.8833
+Precision: 1.0000
+Recall:    0.7500
+F1:        0.8571
+
+-----
+
+SGD
+
+Epoch 145/150 — loss: 0.357476
+Epoch 146/150 — loss: 0.361140
+Epoch 147/150 — loss: 0.384705
+Epoch 148/150 — loss: 0.343445
+Epoch 149/150 — loss: 0.344738
+Epoch 150/150 — loss: 0.364266
+
+Test set metrics:
+Accuracy:  0.8167
+Precision: 0.9474
+Recall:    0.6429
+F1:        0.7660
+
+
+Random state: 75
+
+GD
+
+Epoch 145/150 — loss: 0.339515
+Epoch 146/150 — loss: 0.339100
+Epoch 147/150 — loss: 0.338692
+Epoch 148/150 — loss: 0.338291
+Epoch 149/150 — loss: 0.337896
+Epoch 150/150 — loss: 0.337507
+
+Test set metrics:
+Accuracy:  0.7667
+Precision: 0.7692
+Recall:    0.7143
+F1:        0.7407
+
+----
+
+SGD
+
+Epoch 145/150 — loss: 0.442335
+Epoch 146/150 — loss: 0.395475
+Epoch 147/150 — loss: 0.399506
+Epoch 148/150 — loss: 0.424588
+Epoch 149/150 — loss: 0.433580
+Epoch 150/150 — loss: 0.379692
+
+Test set metrics:
+Accuracy:  0.9167
+Precision: 0.9600
+Recall:    0.8571
+F1:        0.9057
+
+
+Random state: 14
+
+
+GD
+
+Epoch 145/150 — loss: 0.378176
+Epoch 146/150 — loss: 0.377764
+Epoch 147/150 — loss: 0.377358
+Epoch 148/150 — loss: 0.376958
+Epoch 149/150 — loss: 0.376565
+Epoch 150/150 — loss: 0.376177
+
+Test set metrics:
+Accuracy:  0.8833
+Precision: 0.9200
+Recall:    0.8214
+F1:        0.8679
+
+
+------------------------------------
+TESTY dla SGD vs GD przy takich samych wygenerowanych wagach pocz., różne losowane podziały (seed) w kolejnych exp.
+ALE UWAGA 50% test size
+-> tutaj akurat co prawda nadal GD zawsze mocniej uczy się do treningowego - z definicji, ale już co do porównania z SGD jest różnie:
+	- gdy testowy był mały (20%) i dane potencjalnie miały w nim nieco inny rozkład, SGD radził sobie lepiej niż GD ze swoim overfittingiem do 80% danych - puli treningowej
+	- gdy testowy jest 50% więc pół na pół - i częściej rozkłady między nimi są podobne, wychodzi że lepsze douczenie GD może wychodzić na korzyść - również na zbiorze testowym
+
+
+SGD
+
+Epoch 145/150 — loss: 0.373334
+Epoch 146/150 — loss: 0.379399
+Epoch 147/150 — loss: 0.353849
+Epoch 148/150 — loss: 0.351591
+Epoch 149/150 — loss: 0.391558
+Epoch 150/150 — loss: 0.389141
+
+Test set metrics:
+Accuracy:  0.7919
+Precision: 0.8958
+Recall:    0.6232
+F1:        0.7350
+
+GD - tym razem lepszy wynik:
+
+Epoch 145/150 — loss: 0.366952
+Epoch 146/150 — loss: 0.366597
+Epoch 147/150 — loss: 0.366246
+Epoch 148/150 — loss: 0.365898
+Epoch 149/150 — loss: 0.365555
+Epoch 150/150 — loss: 0.365215
+
+Test set metrics:
+Accuracy:  0.8456
+Precision: 0.9423
+Recall:    0.7101
+F1:        0.8099
+
+-----------
+
+SGD
+
+Epoch 145/150 — loss: 0.300510
+Epoch 146/150 — loss: 0.318065
+Epoch 147/150 — loss: 0.322028
+Epoch 148/150 — loss: 0.296228
+Epoch 149/150 — loss: 0.316028
+Epoch 150/150 — loss: 0.301248
+
+Test set metrics:
+Accuracy:  0.8188
+Precision: 0.7763
+Recall:    0.8551
+F1:        0.8138
+
+GD
+
+Epoch 145/150 — loss: 0.296307
+Epoch 146/150 — loss: 0.296036
+Epoch 147/150 — loss: 0.295770
+Epoch 148/150 — loss: 0.295509
+Epoch 149/150 — loss: 0.295253
+Epoch 150/150 — loss: 0.295002
+
+Test set metrics:
+Accuracy:  0.7987
+Precision: 0.7746
+Recall:    0.7971
+F1:        0.7857
+
+-----------
+
+SGD:
+
+Epoch 145/150 — loss: 0.388179
+Epoch 146/150 — loss: 0.362468
+Epoch 147/150 — loss: 0.361430
+Epoch 148/150 — loss: 0.367926
+Epoch 149/150 — loss: 0.353794
+Epoch 150/150 — loss: 0.371608
+
+Test set metrics:
+Accuracy:  0.8255
+Precision: 0.8116
+Recall:    0.8116
+F1:        0.8116
+
+
+Random state: 6
+
+GD:
+
+Epoch 145/150 — loss: 0.371039
+Epoch 146/150 — loss: 0.370466
+Epoch 147/150 — loss: 0.369903
+Epoch 148/150 — loss: 0.369350
+Epoch 149/150 — loss: 0.368806
+Epoch 150/150 — loss: 0.368271
+
+Test set metrics:
+Accuracy:  0.8859
+Precision: 0.8714
+Recall:    0.8841
+F1:        0.8777
