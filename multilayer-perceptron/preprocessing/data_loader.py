@@ -1,7 +1,7 @@
 import pandas as pd
 from pathlib import Path
 
-from data_downloader import DataDownloader
+from preprocessing.data_downloader import DataDownloader
 
 class DataLoader:
     """Uses DataDownloader to load and provide the dataset as a DataFrame.

@@ -1,12 +1,12 @@
-import data_loader
-import data_cleaner
-import data_transformer
+from preprocessing.data_loader import DataLoader
+from preprocessing.data_cleaner import DataCleaner
+from preprocessing.data_transformer import DataTransformer
 
 class PreprocessingPipeline:
     def __init__(self):
-        self.loader = data_loader.DataLoader()
-        self.cleaner = data_cleaner.DataCleaner()
-        self.transformer = data_transformer.DataTransformer(one_hot_encode=True, binarize_targets=True)
+        self.loader = DataLoader()
+        self.cleaner = DataCleaner()
+        self.transformer = DataTransformer(one_hot_encode=True, binarize_targets=True)
 
     def run(self):
         features, targets = self.loader.load_data()

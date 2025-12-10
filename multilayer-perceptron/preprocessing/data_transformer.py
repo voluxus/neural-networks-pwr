@@ -23,6 +23,3 @@ class DataTransformer:
 
         return pd.get_dummies(data, columns=categorical_column_names)
     
-    # TODO feature scaling
-
-        
