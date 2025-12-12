@@ -15,8 +15,8 @@ def experiment_hidden_layers(X_train, y_train, X_test, y_test):
             X_train, y_train, X_test, y_test,
             hidden_layers=hidden_config,
             activation='relu',
-            learning_rate=0.1,
-            epochs=100,
+            learning_rate=0.3,
+            epochs=500,
             normalize=True
         )
         results.append(result)
@@ -30,13 +30,13 @@ def experiment_learning_rates(X_train, y_train, X_test, y_test):
     print("="*80)
     
     results = []
-    for lr in [0.001, 0.01, 0.1, 0.5]:
+    for lr in [0.001, 0.01, 0.1, 0.2, 0.3, 0.5, 1.0]:
         result = train_and_evaluate(
             X_train, y_train, X_test, y_test,
             hidden_layers=[64, 32],
             activation='relu',
             learning_rate=lr,
-            epochs=50,
+            epochs=500,
             normalize=True
         )
         results.append(result)
@@ -50,13 +50,13 @@ def experiment_weight_init(X_train, y_train, X_test, y_test):
     print("="*80)
     
     results = []
-    for std in [0.01, 0.1, 0.5, 1.0]:
+    for std in [0.01, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1, 0.2, 0.3, 0.5, 0.7, 1.0]:
         result = train_and_evaluate(
             X_train, y_train, X_test, y_test,
             hidden_layers=[64, 32],
             activation='relu',
-            learning_rate=0.01,
-            epochs=50,
+            learning_rate=0.3,
+            epochs=500,
             normalize=True,
             weight_init_std=std
         )
@@ -76,8 +76,8 @@ def experiment_normalization(X_train, y_train, X_test, y_test):
             X_train, y_train, X_test, y_test,
             hidden_layers=[64, 32],
             activation='relu',
-            learning_rate=0.01,
-            epochs=50,
+            learning_rate=0.3,
+            epochs=5000,
             normalize=normalize
         )
         results.append(result)
@@ -91,13 +91,24 @@ def experiment_layer_depth(X_train, y_train, X_test, y_test):
     print("="*80)
     
     results = []
-    for layers in [[64], [64, 32], [64, 32, 16], [128, 64, 32, 16]]:
+    for layers in [
+        [32],                    # Small single layer
+        [64],                    # Medium single layer
+        [128],                   # Large single layer
+        [32, 16],                # Small version of good config
+        [64, 32],                # Known good configuration
+        [128, 64],               # Larger version of good config
+        [64, 32, 16],            # Add one layer
+        [128, 64, 32],           # Larger 3-layer
+        [64, 32, 16, 8],         # Deeper with halving pattern
+        [128, 64, 32, 16],       # Larger 4-layer
+    ]:
         result = train_and_evaluate(
             X_train, y_train, X_test, y_test,
             hidden_layers=layers,
             activation='relu',
-            learning_rate=0.01,
-            epochs=50,
+            learning_rate=0.3,
+            epochs=500,
             normalize=True
         )
         results.append(result)
