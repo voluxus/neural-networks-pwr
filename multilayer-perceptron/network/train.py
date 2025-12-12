@@ -49,7 +49,7 @@ def train_and_evaluate(
           f"lr={learning_rate}, normalize={normalize}, weight_std={weight_init_std}")
     print("=" * 80)
     
-    network.fit(X_train, y_train, epochs=epochs, batch_size=batch_size, verbose=True)
+    network.fit(X_train, y_train, epochs=epochs, batch_size=batch_size, verbose=False)
     
     # Evaluate
     y_pred_train = network.predict_classes(X_train)
